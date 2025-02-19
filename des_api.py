@@ -9,7 +9,10 @@ def des(input1,key,flag):#key and input must be string of size 64 containing hex
         fp.write(str(int(key[8:],16))+'\n')
         fp.write(str(flag))
         fp.close()
-        os.system('./des_linus.out')
+        if os.name=='nt':
+            os.system('a.exe')
+        else:
+            os.system("./des_linus.out")
         fp=open('t.txt','r')
         a=fp.read()
         fp.close()
